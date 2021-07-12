@@ -33,7 +33,7 @@ class AwsS3 {
     /// The filename to upload as. If null, defaults to the given file's current filename.
     String? filename,
   }) async {
-    final endpoint = 'https://$bucket.s3-$region.amazonaws.com.cn';
+    final endpoint = 'https://$bucket.s3.$region.amazonaws.com.cn';
     final uploadDest = '$destDir/${filename ?? path.basename(file.path)}';
 
     final stream = http.ByteStream(Stream.castFrom(file.openRead()));
